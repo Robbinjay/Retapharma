@@ -1,0 +1,6 @@
+{
+  "name": "Reta Pharma",
+  "description": "Peptide research, educational resources, purity testing certificates, and analytical batch data portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
