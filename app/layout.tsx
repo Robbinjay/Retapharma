@@ -6,6 +6,10 @@ import { CartProvider } from '@/context/cart-context';
 import CartToast from '@/components/cart/cart-toast';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.retapharma.co.uk'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: 'Buy Retatrutide UK & MT2 | Lab-Tested, COA Verified',
     template: '%s | RetaPharma UK'

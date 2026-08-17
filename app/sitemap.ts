@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { products } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://retapharma.com';
+  const baseUrl = 'https://www.retapharma.co.uk';
   const cleanBaseUrl = baseUrl.replace(/\/+$/, '');
 
   const staticRoutes: MetadataRoute.Sitemap = [
