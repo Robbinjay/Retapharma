@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone, Clock } from 'lucide-react';
 
-export const metadata = {
+export const metadata = { alternates: { canonical: '/contact' },
   title: 'Contact Us | Reta Pharma',
   description: 'Contact Reta Pharma for inquiries regarding our research peptides and batch documentation.',
 };
@@ -70,7 +70,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-300 mb-1">Email Support</h3>
-                    <p className="text-white font-medium text-lg">support@retapharma.co.uk</p>
+                    <p className="text-white font-medium text-lg">support@retapharma.uk</p>
                     <p className="text-sm text-slate-400 mt-1">We aim to reply within 24 hours.</p>
                   </div>
                 </div>

@@ -5,7 +5,7 @@ export const dynamic = 'force-static';
 export const revalidate = 86400; // 24 hours
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.retapharma.co.uk';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://retapharma.uk';
   const cleanBaseUrl = baseUrl.replace(/\/+$/, '');
   const lastModDate = new Date('2025-01-15T00:00:00.000Z');
 

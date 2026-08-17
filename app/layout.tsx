@@ -6,7 +6,7 @@ import { CartProvider } from '@/context/cart-context';
 import CartToast from '@/components/cart/cart-toast';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.retapharma.co.uk'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://retapharma.uk'),
   alternates: {
     canonical: '/',
   },
