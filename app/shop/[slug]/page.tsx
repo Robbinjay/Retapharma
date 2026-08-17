@@ -5,12 +5,20 @@ import Link from 'next/link';
 import { ShieldCheck, FileText, CheckCircle2, ChevronRight } from 'lucide-react';
 import AddToCartButton from '@/components/cart/add-to-cart-button';
 
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
+}
+
 const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const resolvedParams = await params;
   const product = products.find(p => p.slug === resolvedParams?.slug);
-  if (!product) return { title: 'Product Not Found' };
+  if (!product) return { alternates: { canonical: `/shop/${resolvedParams?.slug}` },
+    title: 'Product Not Found' };
   
   return {
+    alternates: { canonical: `/shop/${resolvedParams?.slug}` },
     title: `${product.name} | Reta Pharma`,
     description: product.shortDescription,
   };

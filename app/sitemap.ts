@@ -1,116 +1,120 @@
 import { MetadataRoute } from 'next';
 import { products } from '@/lib/data';
 
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24 hours
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.retapharma.co.uk';
   const cleanBaseUrl = baseUrl.replace(/\/+$/, '');
+  const lastModDate = new Date('2025-01-15T00:00:00.000Z');
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${cleanBaseUrl}`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
       url: `${cleanBaseUrl}/shop`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
       url: `${cleanBaseUrl}/retatrutide`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${cleanBaseUrl}/mt2`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${cleanBaseUrl}/peptide-information`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${cleanBaseUrl}/laboratory-testing`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${cleanBaseUrl}/peptide-calculator`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${cleanBaseUrl}/batch-data`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${cleanBaseUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${cleanBaseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${cleanBaseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${cleanBaseUrl}/faqs`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${cleanBaseUrl}/shipping-policy`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${cleanBaseUrl}/returns-policy`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${cleanBaseUrl}/terms-of-use`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${cleanBaseUrl}/privacy-policy`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${cleanBaseUrl}/disclaimer`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${cleanBaseUrl}/cookie-policy`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
@@ -118,7 +122,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
     url: `${cleanBaseUrl}/shop/${product.slug}`,
-    lastModified: new Date(),
+    lastModified: lastModDate,
     changeFrequency: 'weekly',
     priority: 0.85,
   }));
