@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { products } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.APP_URL || 'https://retapharma.com';
+  const baseUrl = 'https://retapharma.com';
   const cleanBaseUrl = baseUrl.replace(/\/+$/, '');
 
   const staticRoutes: MetadataRoute.Sitemap = [
