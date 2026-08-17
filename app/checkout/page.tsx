@@ -21,8 +21,10 @@ import {
   ArrowLeft, 
   Lock, 
   ArrowRight,
-  Info
+  Info,
+  MessageCircle
 } from 'lucide-react';
+import { getWhatsAppLink, getFullCartOrderMessage } from '@/lib/whatsapp';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -64,6 +66,40 @@ export default function CheckoutPage() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleWhatsAppCheckout = () => {
+    if (cart.length === 0) {
+      setErrorMessage('Your cart is empty. Please add items before placing an order.');
+      return;
+    }
+    const message = getFullCartOrderMessage({
+      items: cart.map((item) => ({
+        name: item.product.name,
+        format: item.product.format,
+        quantity: item.quantity,
+        price: item.product.price,
+        slug: item.product.slug,
+      })),
+      subtotal,
+      shippingOption: {
+        name: selectedShipping.name,
+        price: selectedShipping.price,
+      },
+      grandTotal,
+      customer: {
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        address: formData.address,
+        city: formData.city,
+        postalCode: formData.postalCode,
+        country: formData.country,
+        notes: formData.notes,
+        paymentMethod: selectedPayment,
+      },
+    });
+    window.open(getWhatsAppLink(message), '_blank', 'noopener,noreferrer');
   };
 
   const handlePlaceOrder = async (e: React.FormEvent) => {
@@ -710,6 +746,24 @@ export default function CheckoutPage() {
                         Add £{minOrderShortfall.toFixed(2)} more to reach the £100 minimum threshold.
                       </p>
                     )}
+
+                    {/* WhatsApp Checkout Alternative */}
+                    <div className="relative my-4 flex items-center justify-center">
+                      <div className="border-t border-slate-200 w-full"></div>
+                      <span className="bg-white px-3 text-[11px] text-slate-400 font-semibold uppercase tracking-wider">or</span>
+                    </div>
+
+                    <button
+                      type="button"
+                      id="whatsapp-checkout-action-btn"
+                      onClick={handleWhatsAppCheckout}
+                      disabled={cart.length === 0}
+                      className="w-full py-3.5 px-4 rounded-2xl font-bold text-sm bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 transition-all flex items-center justify-center gap-2.5 active:scale-[0.99] shadow-2xs cursor-pointer"
+                      title="Send your full cart order directly to customer support on WhatsApp"
+                    >
+                      <MessageCircle className="w-5 h-5 text-emerald-600" />
+                      <span>Complete &amp; Submit Order via WhatsApp</span>
+                    </button>
                   </div>
 
                   {/* Trust Signals */}

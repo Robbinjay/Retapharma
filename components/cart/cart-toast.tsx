@@ -15,7 +15,7 @@ export default function CartToast() {
   return (
     <div 
       id="cart-toast-banner"
-      className="fixed bottom-6 right-6 z-50 max-w-sm w-full bg-slate-900 text-white rounded-2xl shadow-2xl border border-slate-700/80 p-4 transition-all duration-300 transform translate-y-0"
+      className="fixed bottom-24 right-6 z-50 max-w-sm w-full bg-slate-900 text-white rounded-2xl shadow-2xl border border-slate-700/80 p-4 transition-all duration-300 transform translate-y-0"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-2 text-emerald-400 font-semibold text-sm">

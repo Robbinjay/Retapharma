@@ -4,6 +4,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { CartProvider } from '@/context/cart-context';
 import CartToast from '@/components/cart/cart-toast';
+import WhatsAppChatWidget from '@/components/whatsapp/whatsapp-chat-widget';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://retapharma.uk'),
@@ -38,6 +39,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             {children}
           </main>
           <CartToast />
+          <WhatsAppChatWidget />
           <Footer />
         </CartProvider>
       </body>

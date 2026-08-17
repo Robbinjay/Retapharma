@@ -2,9 +2,10 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ShoppingCart, ChevronDown, ShoppingBag } from 'lucide-react';
+import { Menu, X, ShoppingCart, ChevronDown, ShoppingBag, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '@/context/cart-context';
+import { WHATSAPP_CONFIG, getWhatsAppLink } from '@/lib/whatsapp';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -85,6 +86,20 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
+
+          {/* WhatsApp Support Direct Link */}
+          <a
+            href={getWhatsAppLink(WHATSAPP_CONFIG.greetings.general)}
+            target="_blank"
+            rel="noopener noreferrer"
+            id="header-whatsapp-chat-link"
+            className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-emerald-700 hover:text-emerald-900 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 text-xs font-bold transition shadow-2xs"
+            title="Chat directly on WhatsApp (+44 7402 223804)"
+          >
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <MessageCircle className="w-3.5 h-3.5" />
+            <span>WhatsApp Chat</span>
+          </a>
 
           {/* Cart / Checkout Button */}
           <Link 
@@ -180,14 +195,27 @@ export default function Header() {
             ))}
           </div>
 
-          <Link
-            href="/checkout"
-            className="bg-emerald-600 text-white px-4 py-3 rounded-lg text-center font-bold hover:bg-emerald-700 transition flex items-center justify-center gap-2"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <ShoppingBag className="w-5 h-5" />
-            <span>Go to Checkout ({itemCount} items)</span>
-          </Link>
+          <div className="pt-2 flex flex-col gap-2">
+            <Link
+              href="/checkout"
+              className="bg-slate-900 text-white px-4 py-3 rounded-xl text-center font-bold hover:bg-slate-800 transition flex items-center justify-center gap-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <ShoppingBag className="w-5 h-5 text-emerald-400" />
+              <span>Go to Checkout ({itemCount} items)</span>
+            </Link>
+
+            <a
+              href={getWhatsAppLink(WHATSAPP_CONFIG.greetings.general)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-xl text-center font-bold transition flex items-center justify-center gap-2 shadow-sm"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>WhatsApp Live Chat</span>
+            </a>
+          </div>
         </div>
       )}
     </header>
