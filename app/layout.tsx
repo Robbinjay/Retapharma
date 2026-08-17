@@ -11,6 +11,17 @@ export const metadata: Metadata = {
     template: '%s | RetaPharma UK'
   },
   description: 'Buy retatrutide UK with third-party COA, plus MT2 research peptides. 99%+ HPLC purity, cold-chain stored, same-day UK dispatch. Research use only.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }
+    ]
+  }
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

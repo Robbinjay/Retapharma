@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, ShoppingCart, ChevronDown, ShoppingBag } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '@/context/cart-context';
@@ -34,12 +35,25 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-bold tracking-tight text-slate-900">Reta Pharma</span>
+        <Link href="/" className="flex items-center gap-3 group" id="header-logo-link">
+          <div className="relative h-10 flex items-center">
+            <Image
+              src="/logo.png"
+              alt="Reta Pharma - Laboratory Grade Peptides Logo"
+              width={160}
+              height={44}
+              className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+              priority
+              referrerPolicy="no-referrer"
+            />
+          </div>
         </Link>
         
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center space-x-5 text-sm font-medium text-slate-600 relative">
+        <nav className="hidden lg:flex items-center space-x-4 xl:space-x-5 text-sm font-medium text-slate-600 relative">
+          <Link href="/" className="hover:text-slate-900 transition-colors py-2 font-semibold text-slate-800 hover:text-emerald-700">
+            Home
+          </Link>
           
           <div 
             className="relative"
@@ -116,7 +130,27 @@ export default function Header() {
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-16 left-0 w-full bg-white border-b shadow-lg py-4 px-4 flex flex-col space-y-4 max-h-[80vh] overflow-y-auto">
-          
+          <div className="pb-3 border-b border-slate-100 flex items-center justify-between">
+            <Image
+              src="/logo.png"
+              alt="Reta Pharma - Quality Peptides"
+              width={140}
+              height={38}
+              className="h-8 w-auto object-contain"
+            />
+            <span className="text-xs font-semibold px-2 py-1 bg-emerald-50 text-emerald-700 rounded-md border border-emerald-200">
+              Verified Peptides
+            </span>
+          </div>
+
+          <Link
+            href="/"
+            className="text-slate-900 hover:text-emerald-600 font-bold text-lg py-1 border-b border-slate-100"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Home
+          </Link>
+
           <div className="space-y-2">
              <div className="font-bold text-slate-900 text-lg">Shop Categories</div>
              <div className="pl-4 flex flex-col space-y-2 border-l-2 border-slate-100">

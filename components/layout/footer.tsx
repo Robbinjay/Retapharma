@@ -1,11 +1,23 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300 py-16">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         <div>
-          <h3 className="text-xl font-bold text-white mb-4">Reta Pharma</h3>
+          <Link href="/" className="inline-block mb-4 group" id="footer-logo-link">
+            <div className="bg-white/95 rounded-xl px-3 py-1.5 inline-flex items-center shadow-xs group-hover:bg-white transition-colors">
+              <Image
+                src="/logo.png"
+                alt="Reta Pharma - Certified Research Peptides Official Logo"
+                width={150}
+                height={40}
+                className="h-8 w-auto object-contain"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </Link>
           <p className="text-sm leading-relaxed text-slate-400">
             Premium peptide research and education. Dedicated to transparency, high-quality analytical testing, and providing researchers with reliable scientific materials.
           </p>

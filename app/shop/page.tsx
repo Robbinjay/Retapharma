@@ -4,6 +4,7 @@ import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { products } from '@/lib/data';
 import Image from 'next/image';
+import ProductImage from '@/components/ui/product-image';
 import Link from 'next/link';
 import { CheckCircle2, Search, Filter, ShoppingBag } from 'lucide-react';
 import { useCart } from '@/context/cart-context';
@@ -94,13 +95,13 @@ function ShopContent() {
             {filteredProducts.map((product) => (
               <div key={product.id} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
                 <div className="relative h-64 w-full bg-slate-50/70 border-b border-slate-100 overflow-hidden flex items-center justify-center p-4">
-                  <Image
+                  <ProductImage
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
-                    referrerPolicy="no-referrer"
+                    fallbackCategory={product.category}
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">

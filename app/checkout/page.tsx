@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import ProductImage from '@/components/ui/product-image';
 import Link from 'next/link';
 import { useCart, SHIPPING_OPTIONS, MIN_ORDER_AMOUNT, ShippingOption } from '@/context/cart-context';
 import { 
@@ -578,12 +579,13 @@ export default function CheckoutPage() {
                         className="flex items-center gap-3.5 pb-4 border-b border-slate-100 last:border-0"
                       >
                         <div className="relative w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 overflow-hidden flex-shrink-0 flex items-center justify-center">
-                          <Image
+                          <ProductImage
                             src={item.product.image}
                             alt={item.product.name}
                             fill
+                            sizes="56px"
                             className="object-contain p-1"
-                            referrerPolicy="no-referrer"
+                            fallbackCategory={item.product.category}
                           />
                         </div>
 

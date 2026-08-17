@@ -1,6 +1,6 @@
 import { products } from '@/lib/data';
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
+import ProductImage from '@/components/ui/product-image';
 import Link from 'next/link';
 import { ShieldCheck, FileText, CheckCircle2, ChevronRight } from 'lucide-react';
 import AddToCartButton from '@/components/cart/add-to-cart-button';
@@ -42,14 +42,14 @@ const ProductPage = async ({ params }: { params: Promise<{ slug: string }> }) =>
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Product Image */}
             <div className="relative h-[420px] md:h-full min-h-[380px] bg-slate-50 border-b md:border-b-0 md:border-r border-slate-100 overflow-hidden flex items-center justify-center p-8">
-              <Image
+              <ProductImage
                 src={product.image}
                 alt={product.name}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-contain p-6"
-                referrerPolicy="no-referrer"
+                fallbackCategory={product.category}
               />
             </div>
             

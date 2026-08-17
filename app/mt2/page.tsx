@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ProductImage from '@/components/ui/product-image';
 import Link from 'next/link';
 
 export const metadata = {
@@ -49,12 +49,12 @@ export default function MT2Page() {
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
                   <div className="flex items-center gap-6">
                     <div className="relative w-24 h-24 bg-white rounded-xl border border-slate-200 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
-                      <Image
-                        src="/products/melanotan-mt2-10mg.webp"
+                      <ProductImage
+                        src="/products/melanotan-mt2-10mg.png"
                         alt="Melanotan MT-2 10mg"
                         fill
                         className="object-contain p-1"
-                        referrerPolicy="no-referrer"
+                        fallbackCategory="MT2"
                       />
                     </div>
                     <div>
@@ -72,12 +72,12 @@ export default function MT2Page() {
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
                   <div className="flex items-center gap-6">
                     <div className="relative w-24 h-24 bg-white rounded-xl border border-slate-200 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
-                      <Image
-                        src="/products/mt2-melanotan-ii-10mg.png"
+                      <ProductImage
+                        src="/products/melanotan-ii-mt2-10mg.png"
                         alt="Melanotan II (MT2) 10mg"
                         fill
                         className="object-contain p-1"
-                        referrerPolicy="no-referrer"
+                        fallbackCategory="Peptides"
                       />
                     </div>
                     <div>

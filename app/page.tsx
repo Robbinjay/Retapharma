@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Hero from '@/components/ui/hero';
 import { getFeaturedProducts } from '@/lib/data';
 import Image from 'next/image';
+import ProductImage from '@/components/ui/product-image';
 import Link from 'next/link';
 import { 
   ShieldCheck, 
@@ -165,15 +166,15 @@ export default function Home() {
                 className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-200 flex flex-col h-full"
               >
                 <div className="relative h-52 w-full bg-slate-50/70 border-b border-slate-100 overflow-hidden flex items-center justify-center p-4">
-                  <Image
+                  <ProductImage
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
-                    referrerPolicy="no-referrer"
+                    fallbackCategory={product.category}
                   />
-                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs border border-slate-200 text-slate-700 text-xs font-medium px-2 py-0.5 rounded">
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs border border-slate-200 text-slate-700 text-xs font-medium px-2 py-0.5 rounded z-10">
                     {product.category}
                   </div>
                 </div>
@@ -284,25 +285,25 @@ export default function Home() {
               </div>
             </div>
 
-            {/* H3: Documentation That Passes an Audit */}
+            {/* H3: Verified Documentation & Discreet Delivery */}
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-slate-300 transition-all flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center mb-6">
                   <FileCheck2 className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  Documentation That Passes an Audit
+                  Verified Documentation &amp; Discreet Delivery
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                  Every order ships with a batch-referenced certificate of analysis, a dated VAT invoice and a materials declaration confirming research-use-only status.
+                  Every order is dispatched with complete batch provenance, including a batch-referenced Certificate of Analysis (COA), HPLC purity documentation, and a dated VAT invoice. Full analytical records are included in every parcel and accessible via your customer account.
                 </p>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  If your institution runs procurement reviews or your funder asks for provenance, the paperwork is already in the box and linked within your customer account.
+                  All orders are packaged in plain, unbranded, temperature-insulated parceling with no external indication of contents, ensuring complete privacy, fast tracked delivery, and verified quality standards for research and consumer peace of mind.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-200/80 flex items-center gap-2 text-xs font-semibold text-amber-800">
                 <Check className="w-4 h-4" />
-                <span>COA, VAT invoice &amp; RUO declaration included</span>
+                <span>Batch COA, VAT invoice, discreet packaging &amp; verified purity</span>
               </div>
             </div>
 

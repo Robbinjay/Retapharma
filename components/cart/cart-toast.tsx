@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ProductImage from '@/components/ui/product-image';
 import { useCart } from '@/context/cart-context';
 import { CheckCircle2, ShoppingBag, ArrowRight, X } from 'lucide-react';
 
@@ -32,12 +33,13 @@ export default function CartToast() {
 
       <div className="mt-3 flex items-center gap-3 bg-slate-800/80 rounded-xl p-2.5 border border-slate-700">
         <div className="relative w-12 h-12 rounded-lg bg-white overflow-hidden flex-shrink-0">
-          <Image
+          <ProductImage
             src={recentlyAddedProduct.image}
             alt={recentlyAddedProduct.name}
             fill
+            sizes="48px"
             className="object-contain p-1"
-            referrerPolicy="no-referrer"
+            fallbackCategory={recentlyAddedProduct.category}
           />
         </div>
         <div className="flex-grow min-w-0">
