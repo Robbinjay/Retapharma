@@ -6,7 +6,6 @@ import {
   X, 
   Send, 
   CheckCheck, 
-  ShieldCheck, 
   ShoppingBag, 
   HelpCircle, 
   Clock, 
@@ -19,7 +18,6 @@ import { WHATSAPP_CONFIG, getWhatsAppLink } from '@/lib/whatsapp';
 export default function WhatsAppChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
-  const [hasInteracted, setHasInteracted] = useState(false);
   const [showNotificationBadge, setShowNotificationBadge] = useState(true);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -41,7 +39,6 @@ export default function WhatsAppChatWidget() {
       }
       return next;
     });
-    setHasInteracted(true);
   };
 
   const handleSendMessage = (e?: React.FormEvent) => {
@@ -110,14 +107,14 @@ export default function WhatsAppChatWidget() {
               </div>
               <div className="bg-white p-3.5 rounded-2xl rounded-tl-xs shadow-xs border border-slate-100 max-w-[88%] text-slate-800 space-y-2">
                 <p className="font-semibold text-slate-900 flex items-center gap-1.5">
-                  <span>Support Team</span>
+                  <span>Customer Support Team</span>
                   <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                 </p>
                 <p className="text-slate-700 leading-relaxed text-xs sm:text-sm">
                   Welcome to <strong>{WHATSAPP_CONFIG.businessName}</strong>! 👋
                 </p>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                  How can we help you today? You can ask product questions, check batch testing certificates, or place your order directly via WhatsApp.
+                  How can we help you today?
                 </p>
                 <div className="flex items-center justify-between pt-1 text-[11px] text-slate-400">
                   <span>Customer Support</span>
@@ -154,18 +151,6 @@ export default function WhatsAppChatWidget() {
                   <div className="flex items-center gap-2">
                     <HelpCircle className="w-4 h-4 text-emerald-600" />
                     <span>Ask a Product or Technical Question</span>
-                  </div>
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-600 transition-transform group-hover:translate-x-0.5" />
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => handleQuickPrompt(WHATSAPP_CONFIG.greetings.batchCOA)}
-                  className="w-full text-left p-2.5 bg-white hover:bg-emerald-50/80 border border-slate-200 hover:border-emerald-300 rounded-xl transition flex items-center justify-between text-xs text-slate-800 font-medium group shadow-2xs"
-                >
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                    <span>Request Batch Purity & COA Data</span>
                   </div>
                   <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-600 transition-transform group-hover:translate-x-0.5" />
                 </button>
