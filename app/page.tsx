@@ -27,8 +27,22 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Buy Retatrutide UK & MT2 | Lab-Tested, COA Verified',
-  description: 'Buy retatrutide UK with third-party COA, plus MT2 research peptides. 99%+ HPLC purity, cold-chain stored, same-day UK dispatch. Research use only.',
+  title: 'Buy Retatrutide UK & MT2 | Lab-Tested, COA Verified Peptides',
+  description: 'Buy high-purity retatrutide UK with third-party COA verification. Premium MT2 and research peptides. 99%+ HPLC purity, cold-chain stored, same-day UK dispatch.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Buy Retatrutide UK & MT2 | Lab-Tested, COA Verified Peptides',
+    description: 'Buy high-purity retatrutide UK with third-party COA verification. Premium MT2 and research peptides.',
+    url: 'https://retapharma.uk',
+    images: [{ url: '/logo.png', alt: 'RetaPharma UK Logo' }],
+  },
+  twitter: {
+    title: 'Buy Retatrutide UK & MT2 | RetaPharma UK',
+    description: 'High-purity research peptides with 3rd-party COA verification.',
+    images: ['/logo.png'],
+  }
 };
 
 export default function Home() {
@@ -146,7 +160,7 @@ export default function Home() {
                 Featured Research Materials
               </h2>
               <p className="text-base text-slate-600 mt-2 max-w-2xl">
-                High-purity peptides for research and human consumption, or therapeutic use.
+                High-purity peptides for in-vitro laboratory research and analytical testing.
               </p>
             </div>
             <Link
@@ -169,6 +183,7 @@ export default function Home() {
                   <ProductImage
                     src={product.image}
                     alt={product.name}
+                    title={`${product.name} - Featured Research Peptide`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
@@ -298,7 +313,7 @@ export default function Home() {
                   Every order is dispatched with complete batch provenance, including a batch-referenced Certificate of Analysis (COA), HPLC purity documentation, and a dated VAT invoice. Full analytical records are included in every parcel and accessible via your customer account.
                 </p>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  All orders are packaged in plain, unbranded, temperature-insulated parceling with no external indication of contents, ensuring complete privacy, fast tracked delivery, and verified quality standards for research and consumer peace of mind.
+                  All orders are packaged in plain, unbranded, temperature-insulated parceling with no external indication of contents, ensuring privacy, fast tracked delivery, and verified quality standards for research.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-200/80 flex items-center gap-2 text-xs font-semibold text-amber-800">
@@ -314,18 +329,18 @@ export default function Home() {
                   <Headset className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  Expert Support &amp; Professional Dosage Guidance
+                  Expert Support &amp; Technical Guidance
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                  Questions regarding storage temperatures, reconstitution, dosage protocols, chromatogram interpretation, or batch history reach experienced specialists with clinical and laboratory backgrounds.
+                  Questions regarding storage temperatures, reconstitution, analytical protocols, chromatogram interpretation, or batch history reach experienced specialists with laboratory backgrounds.
                 </p>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  Receive clear, personalized assistance and tailored dosage advice to ensure safe, effective, and well-informed application for your specific requirements.
+                  Receive clear, technical assistance and handling guidance to ensure compliant and well-informed application for your specific research requirements.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-slate-200/80 flex items-center gap-2 text-xs font-semibold text-indigo-700">
                 <Check className="w-4 h-4" />
-                <span>Professional dosage guidance &amp; dedicated expert support</span>
+                <span>Technical handling guidance &amp; dedicated expert support</span>
               </div>
             </div>
           </div>

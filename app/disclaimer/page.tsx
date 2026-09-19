@@ -21,9 +21,9 @@ export default function Disclaimer() {
           </div>
 
           <div className="prose prose-lg text-slate-700 max-w-none prose-headings:text-slate-900">
-            <h2>Research and Human Consumption</h2>
+            <h2>Research Use Only</h2>
             <p>
-              All products provided by Reta Pharma (including Retatrutide and Melanotan II) are available for research and human consumption, or therapeutic use.
+              All products provided by Reta Pharma (including Retatrutide and Melanotan II) are supplied strictly for in-vitro laboratory research and analytical testing. They are not intended for human or animal consumption, or therapeutic use.
             </p>
             
             <h2>Not Approved Medicines</h2>

@@ -2,8 +2,16 @@ import ProductImage from '@/components/ui/product-image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'MT2 (Melanotan II) | Research & Peptide Sales | Reta Pharma',
-  description: 'Research Melanotan II (MT2) synthetic cyclic heptapeptide analog. High purity MT2 for laboratory testing.',
+  title: 'MT2 (Melanotan II) Research Peptides | 99% Purity | RetaPharma UK',
+  description: 'Buy high-purity Melanotan II (MT2) synthetic cyclic heptapeptide analog for laboratory research. HPLC tested, same-day UK dispatch, cold-chain stored.',
+  alternates: {
+    canonical: '/mt2',
+  },
+  openGraph: {
+    title: 'MT2 (Melanotan II) Research & Lab Data | RetaPharma UK',
+    description: 'Explore technical data and high-purity research materials for Melanotan II (MT2). HPLC verified purity.',
+    url: 'https://retapharma.uk/mt2',
+  }
 };
 
 export default function MT2Page() {
@@ -40,7 +48,7 @@ export default function MT2Page() {
               <strong>Important:</strong> Melanotan II is not an approved medicine. It has not been approved by regulatory bodies (such as the MHRA in the UK or the FDA in the US) for human use. 
             </p>
             <p>
-              Reta Pharma supplies high-purity MT2 for research and human consumption, or therapeutic use.
+              Reta Pharma supplies high-purity MT2 strictly for in-vitro laboratory research and analytical testing. It is not intended for human or animal consumption, or therapeutic use.
             </p>
 
             <div className="mt-12 pt-8 border-t border-slate-100">
@@ -52,6 +60,7 @@ export default function MT2Page() {
                       <ProductImage
                         src="/products/melanotan-mt2-10mg.png"
                         alt="Melanotan MT-2 10mg"
+                        title="Melanotan MT-2 10mg Lyophilised Peptide - RetaPharma UK"
                         fill
                         className="object-contain p-1"
                         fallbackCategory="MT2"
@@ -75,6 +84,7 @@ export default function MT2Page() {
                       <ProductImage
                         src="/products/melanotan-ii-mt2-10mg.png"
                         alt="Melanotan II (MT2) 10mg"
+                        title="Melanotan II (MT2) 10mg - RetaPharma UK"
                         fill
                         className="object-contain p-1"
                         fallbackCategory="Peptides"

@@ -1,7 +1,18 @@
 import Link from 'next/link';
 import { articles } from '@/lib/data';
 
-export const metadata = { title: 'Blog & Education | Reta Pharma' };
+export const metadata = { 
+  title: 'Peptide Blog & Education Hub | Research Insights | RetaPharma UK',
+  description: 'In-depth articles on peptide research, HPLC analysis, laboratory storage, and scientific advancements in the world of biochemistry.',
+  alternates: {
+    canonical: '/blog',
+  },
+  openGraph: {
+    title: 'Peptide Blog & Education Hub | RetaPharma UK',
+    description: 'Expert insights into peptide research, handling protocols, and lab data analysis.',
+    url: 'https://retapharma.uk/blog',
+  }
+};
 export default function Blog() {
   return (
     <div className="bg-slate-50 min-h-screen py-16">

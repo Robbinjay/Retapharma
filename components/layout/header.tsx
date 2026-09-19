@@ -41,6 +41,7 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="Reta Pharma - Laboratory Grade Peptides Logo"
+              title="RetaPharma UK - High Purity Peptides"
               width={160}
               height={44}
               className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
@@ -149,6 +150,7 @@ export default function Header() {
             <Image
               src="/logo.png"
               alt="Reta Pharma - Quality Peptides"
+              title="RetaPharma UK Logo"
               width={140}
               height={38}
               className="h-8 w-auto object-contain"

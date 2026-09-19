@@ -14,13 +14,27 @@ export async function generateStaticParams() {
 const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const resolvedParams = await params;
   const product = products.find(p => p.slug === resolvedParams?.slug);
-  if (!product) return { alternates: { canonical: `/shop/${resolvedParams?.slug}` },
-    title: 'Product Not Found' };
+  if (!product) return { 
+    alternates: { canonical: `/shop/${resolvedParams?.slug}` },
+    title: 'Product Not Found' 
+  };
   
   return {
-    alternates: { canonical: `/shop/${resolvedParams?.slug}` },
-    title: `${product.name} | Reta Pharma`,
-    description: product.shortDescription,
+    alternates: { canonical: `/shop/${product.slug}` },
+    title: product.seoTitle || `${product.name} | High Purity Research Peptide | RetaPharma UK`,
+    description: product.metaDescription || `Buy ${product.name} research peptide in the UK. ${product.shortDescription} COA verified, 99%+ HPLC purity, cold-chain stored.`,
+    openGraph: {
+      title: product.seoTitle || `${product.name} | RetaPharma UK`,
+      description: product.metaDescription || product.shortDescription,
+      url: `https://retapharma.uk/shop/${product.slug}`,
+      images: [{ url: product.image, alt: product.name }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: product.seoTitle || `${product.name} | RetaPharma UK`,
+      description: product.metaDescription || product.shortDescription,
+      images: [product.image],
+    }
   };
 };
 
@@ -53,6 +67,7 @@ const ProductPage = async ({ params }: { params: Promise<{ slug: string }> }) =>
               <ProductImage
                 src={product.image}
                 alt={product.name}
+                title={`${product.name} Lyophilized Peptide - RetaPharma UK`}
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -97,8 +112,8 @@ const ProductPage = async ({ params }: { params: Promise<{ slug: string }> }) =>
                 <div className="flex items-start gap-3">
                   <ShieldCheck className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="font-semibold text-slate-900 block">Research and Human Consumption</span>
-                    <span className="text-slate-600">For human consumption or therapeutic use.</span>
+                    <span className="font-semibold text-slate-900 block">Research Use Only</span>
+                    <span className="text-slate-600">Strictly for in-vitro laboratory research and analytical testing.</span>
                   </div>
                 </div>
               </div>
@@ -118,9 +133,9 @@ const ProductPage = async ({ params }: { params: Promise<{ slug: string }> }) =>
               Lyophilized peptides should be stored at -20°C (freezer) for long-term stability. Before reconstitution, allow the vial to reach room temperature in a desiccator. Reconstituted solutions should be stored at 4°C and typically used within a few weeks, depending on the specific peptide and diluent used.
             </p>
             <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 mt-8 rounded-r-xl">
-              <h4 className="font-bold text-emerald-900 mb-2">Product Information &amp; Usage</h4>
+              <h4 className="font-bold text-emerald-900 mb-2">Research Compliance & Proper Handling</h4>
               <p className="text-sm text-emerald-800 m-0">
-                This product is provided for research and human consumption, or therapeutic use. Please ensure proper handling, storage, and reconstitution according to standard guidelines. By purchasing, you agree to our Terms of Use and product policies.
+                This product is provided strictly for in-vitro laboratory research and analytical testing. It is not intended for human or animal consumption, or therapeutic use. Please ensure proper handling, storage, and reconstitution according to standard laboratory protocols. By purchasing, you agree to our Terms of Use and research policies.
               </p>
             </div>
           </div>

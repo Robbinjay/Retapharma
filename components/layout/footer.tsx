@@ -13,6 +13,7 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Reta Pharma - Certified Research Peptides Official Logo"
+                title="RetaPharma UK - Verified Research Peptides"
                 width={150}
                 height={40}
                 className="h-8 w-auto object-contain"
@@ -91,7 +92,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 mt-12 pt-8 border-t border-slate-800 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between">
         <p>&copy; {new Date().getFullYear()} Reta Pharma. All rights reserved.</p>
         <p className="mt-4 md:mt-0 max-w-xl text-xs text-center md:text-right">
-          Disclaimer: Products are provided for research and human consumption, therapeutic use, or medical treatment.
+          Disclaimer: Products are provided strictly for in-vitro laboratory research and analytical testing. They are not intended for human or animal consumption, therapeutic use, or medical treatment.
         </p>
       </div>
     </footer>

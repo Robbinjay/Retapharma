@@ -9,8 +9,8 @@ export default function About() {
           <p>Our mission is to support scientific advancement through transparency, rigorous testing, and reliable supply chains.</p>
           <h3>Our Commitment to Quality</h3>
           <p>Every product we supply undergoes comprehensive third-party testing, including HPLC and Mass Spectrometry, to verify purity, identity, and quantity.</p>
-          <h3>Research and Human Consumption</h3>
-          <p>Products available on our platform are supplied for research and human consumption, or therapeutic use.</p>
+          <h3>Research Use Only</h3>
+          <p>Products available on our platform are supplied strictly for in-vitro laboratory research and analytical testing. They are not intended for human or animal consumption, or therapeutic use.</p>
         </div>
       </div>
     </div>

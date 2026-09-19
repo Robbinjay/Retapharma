@@ -3,8 +3,16 @@ import Link from 'next/link';
 import { Beaker, BookOpen, FileText, Activity } from 'lucide-react';
 
 export const metadata = {
-  title: 'Retatrutide | Research, Information & Laboratory Data | Reta Pharma',
-  description: 'Comprehensive information on Retatrutide, an investigational triple hormone receptor agonist. Learn about its mechanism, research status, and laboratory testing.',
+  title: 'Retatrutide Research & Lab Data | High Purity Triple Agonist | RetaPharma UK',
+  description: 'Comprehensive information on Retatrutide, an investigational triple hormone receptor agonist. HPLC verified purity reports and laboratory-grade research materials.',
+  alternates: {
+    canonical: '/retatrutide',
+  },
+  openGraph: {
+    title: 'Retatrutide Research Information | RetaPharma UK',
+    description: 'Explore the science behind the investigational triple receptor agonist Retatrutide. HPLC testing and stability data.',
+    url: 'https://retapharma.uk/retatrutide',
+  }
 };
 
 export default function RetatrutideHub() {
@@ -69,7 +77,7 @@ export default function RetatrutideHub() {
                 Retatrutide is currently undergoing clinical trials by its original developer. <strong>It is not an approved medical treatment in the UK or elsewhere.</strong>
               </p>
               <p>
-                The materials provided by Reta Pharma are available for research and human consumption, or therapeutic use. Researchers and clients utilize our high-purity lyophilized retatrutide to study receptor binding affinities, cellular signaling cascades, and peptide stability.
+                The materials provided by Reta Pharma are supplied strictly for in-vitro laboratory research and analytical testing. They are not intended for human or animal consumption, or therapeutic use. Researchers and clients utilize our high-purity lyophilized retatrutide to study receptor binding affinities, cellular signaling cascades, and peptide stability.
               </p>
 
               <h2>Laboratory Testing and Purity</h2>

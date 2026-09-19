@@ -7,6 +7,7 @@ import { Beaker } from 'lucide-react';
 interface ProductImageProps {
   src: string;
   alt: string;
+  title?: string;
   fill?: boolean;
   priority?: boolean;
   sizes?: string;
@@ -17,6 +18,7 @@ interface ProductImageProps {
 function ProductImageRenderer({
   src,
   alt,
+  title,
   fill = true,
   priority = false,
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
@@ -29,7 +31,7 @@ function ProductImageRenderer({
 
   if (!src || errorLevel >= 3) {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100/80 p-4 text-center select-none">
+      <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-slate-100/80 p-4 text-center select-none" title={title || alt}>
         <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center text-emerald-600 mb-2">
           <Beaker className="w-7 h-7 stroke-[1.5]" />
         </div>
@@ -50,6 +52,7 @@ function ProductImageRenderer({
         <Image
           src={src}
           alt={alt}
+          title={title || alt}
           fill={fill}
           priority={priority}
           sizes={sizes}
@@ -73,6 +76,7 @@ function ProductImageRenderer({
         <img
           src={src}
           alt={alt}
+          title={title || alt}
           className={`w-full h-full ${className}`}
           loading={priority ? 'eager' : 'lazy'}
           onError={() => {
@@ -97,6 +101,7 @@ function ProductImageRenderer({
       <img
         src={alternateSrc}
         alt={alt}
+        title={title || alt}
         className={`w-full h-full ${className}`}
         loading="lazy"
         onError={() => setErrorLevel(3)}

@@ -8,7 +8,7 @@ export default function TermsOfUse() {
           <h3>1. Acceptance of Terms</h3>
           <p>By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
           <h3>2. Intended Use</h3>
-          <p>Products sold are available for research and human consumption, therapeutic use, or medical treatment.</p>
+          <p>Products sold on this platform are supplied strictly for in-vitro laboratory research and analytical testing. They are not intended for human or animal consumption, therapeutic use, or medical treatment.</p>
           <h3>3. Liability</h3>
           <p>Reta Pharma shall not be held liable for any damages resulting from the handling or contact with the products. It is the buyer&apos;s responsibility to understand the hazards and strictly follow laboratory safety protocols.</p>
         </div>

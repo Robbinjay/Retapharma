@@ -2,10 +2,12 @@ import { Mail, Clock, MessageCircle, ArrowRight, ShieldCheck, Zap } from 'lucide
 import Link from 'next/link';
 import { WHATSAPP_CONFIG, getWhatsAppLink } from '@/lib/whatsapp';
 
-export const metadata = { 
-  alternates: { canonical: '/contact' },
-  title: 'Contact Us & Live WhatsApp Support | Reta Pharma',
-  description: 'Contact Reta Pharma for peptide research support, WhatsApp live chat ordering, and batch analytical documentation.',
+export const metadata = {
+  title: 'Contact RetaPharma UK | Support & Research Inquiries',
+  description: 'Get in touch with the RetaPharma team for support, product inquiries, or laboratory data assistance. Fast response via WhatsApp or Email.',
+  alternates: {
+    canonical: '/contact',
+  }
 };
 
 export default function Contact() {
